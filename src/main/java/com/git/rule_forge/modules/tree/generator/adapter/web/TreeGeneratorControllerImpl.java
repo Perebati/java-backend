@@ -1,0 +1,38 @@
+package com.git.rule_forge.modules.tree.generator.adapter.web;
+
+import jakarta.validation.constraints.NotNull;
+import lombok.RequiredArgsConstructor;
+import com.git.rule_forge.exception.SystemGlobalException;
+import com.git.rule_forge.exception.models.AdapterException;
+import com.git.rule_forge.modules.tree.generator.adapter.web.interfaces.TreeGeneratorController;
+import com.git.rule_forge.modules.tree.generator.application.usecase.CreateTreeUseCase;
+import com.git.rule_forge.modules.tree._shared.domain.RootTree;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+
+/**
+ * @author Lucas Batista Pereira
+ * @version v1.0
+ * @class TreeController
+ * @since v1.0 (12/02/2025)
+ */
+@RequiredArgsConstructor
+@Controller
+public class TreeGeneratorControllerImpl implements TreeGeneratorController {
+
+    private final CreateTreeUseCase createTreeUseCase;
+
+    public ResponseEntity<RootTree<?>> createTree(@NotNull RootTree<?> request) throws SystemGlobalException {
+        try {
+            return ResponseEntity.status(HttpStatus.CREATED).body(
+                    this.createTreeUseCase.execute(
+                            request
+                    ));
+        } catch (SystemGlobalException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new AdapterException("Unexpected error in operation creation.", e);
+        }
+    }
+}
