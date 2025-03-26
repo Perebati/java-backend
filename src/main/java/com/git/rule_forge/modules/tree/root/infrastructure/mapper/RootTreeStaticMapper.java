@@ -1,0 +1,27 @@
+package com.git.rule_forge.modules.tree.root.infrastructure.mapper;
+
+import com.git.rule_forge.modules.tree._shared.infrastructure.mapper.NodeTreeGenericMapper;
+import com.git.rule_forge.modules.tree.root.domain.RootTreeStatic;
+import com.git.rule_forge.modules.tree.root.infrastructure.RootTreeStaticEntity;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+import org.mapstruct.ReportingPolicy;
+import org.springframework.context.annotation.Primary;
+
+/**
+ * @author Lucas Batista Pereira
+ * @version v1.0
+ * @class RootTreeStaticMapper
+ * @since v1.0 (30/11/2024)
+ */
+@Mapper(
+        componentModel = MappingConstants.ComponentModel.SPRING,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE
+)
+@Primary
+public interface RootTreeStaticMapper extends NodeTreeGenericMapper<RootTreeStatic, RootTreeStaticEntity> {
+    @Override
+    @Mapping(target = "nodes", source = "nodes", qualifiedByName = "mapNodes")
+    RootTreeStatic toEntity(RootTreeStaticEntity schema);
+}
