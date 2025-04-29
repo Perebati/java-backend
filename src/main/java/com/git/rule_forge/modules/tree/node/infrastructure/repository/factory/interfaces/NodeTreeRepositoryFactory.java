@@ -1,0 +1,14 @@
+package com.git.rule_forge.modules.tree.node.infrastructure.repository.factory.interfaces;
+
+import com.git.rule_forge._shared.infrastructure.repository.interfaces.GenericBusinessRepository;
+import com.git.rule_forge.modules.tree._shared.domain.Node;
+
+/**
+ * @author Lucas Batista Pereira
+ * @version v1.1
+ * @class NodeTreeRepositoryFactory
+ * @since v1.0 (06/02/2025)
+ */
+public interface NodeTreeRepositoryFactory {
+    <T extends Node<?>> GenericBusinessRepository<T> getRepositoryForNode(T node);
+}
