@@ -1,0 +1,16 @@
+package com.git.rule_forge.modules.tree.comparison.domain.service.singular.types;
+
+import com.git.rule_forge.modules.tree.comparison.domain.service.singular.ComparisonSingularOperation;
+
+/**
+ * @author Lucas Batista Pereira
+ * @version v1.0
+ * @class IsDifferentOperation
+ * @since v1.0 (30/11/2024)
+ */
+public class IsDifferentOperation extends ComparisonSingularOperation {
+    @Override
+    public Boolean doOperation(String a, String b) {
+        return !a.equals(b);
+    }
+}
