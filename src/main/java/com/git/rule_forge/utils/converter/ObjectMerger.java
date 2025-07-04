@@ -52,8 +52,4 @@ public class ObjectMerger {
 
         return target;
     }
-
-    private static boolean isAssignable(Class<?> targetType, Class<?> sourceType) {
-        return targetType.isAssignableFrom(sourceType);
-    }
 }
