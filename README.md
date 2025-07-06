@@ -400,23 +400,9 @@ docker run -p 8080:8080 \
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
-
-- **Lucas Batista Pereira** - *Initial work* - [@Perebati](https://github.com/Perebati)
-
 ## 🙏 Acknowledgments
 
 - Inspired by [Java Spring Clean DDD Template](https://github.com/Perebati/java-spring-clean-ddd-template)
 - Built with modern Spring Boot ecosystem
 - Follows Evans' Domain-Driven Design principles
 - Implements Martin's Clean Architecture patterns
-
-## 📞 Support
-
-For support, email lucas.bpereira1999@gmail.com or create an issue in the repository.
-
----
-
-<div align="center">
-  <p>Made with ❤️ for the financial technology community</p>
-</div>
